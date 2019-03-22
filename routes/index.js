@@ -9,17 +9,17 @@ router.get('/', function (req, res, next) {
   //   password: 'testpassword'
   // });
 
-  DBLoader.User.findOne({username: 'Test'}, (err, result) => {
-    if (err) {
-      return res.json({
-        message: 'User wasn\'t finded!'
-      });
-    }
-
-    return res.json({
-      res: result
-    });
-  });
+  // DBLoader.User.findOne({username: 'Test'}, (err, result) => {
+  //   if (err) {
+  //     return res.json({
+  //       message: 'User wasn\'t finded!'
+  //     });
+  //   }
+  //
+  //   return res.json({
+  //     res: result
+  //   });
+  // });
   // user.save().then(() => {
   //   return res.json({
   //     message: 'db document saved'

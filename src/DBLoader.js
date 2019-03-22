@@ -12,5 +12,15 @@ const User = mongoose.model('User', {
   password: String
 });
 
+const Clip = mongoose.model('Clip', {
+  userId: String,
+  soundFile: String,
+  position: {
+    x: Number,
+    y: Number
+  }
+});
+
 exports.User = User;
+exports.Clip = Clip;
 exports.load = DBLoader;
