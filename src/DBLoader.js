@@ -2,8 +2,7 @@ const mongoose = require('mongoose');
 require('dotenv').config();
 
 function DBLoader() {
-  mongoose.connect('mongodb://' + process.env.MONGODB_USER + ':'
-    + process.env.MONGODB_ADMIN_PASSWORD + '@' + 'mongodb:27017/' + process.env.MONGODB_DATABASE, {useNewUrlParser: true}).catch(() => {
+  mongoose.connect('mongodb://' + process.env.MONGODB_USER + ':' + process.env.MONGODB_PASSWORD + '@mongodb:27017/funtom', {useNewUrlParser: true}).catch(() => {
     console.error('Connect error');
   });
 }
