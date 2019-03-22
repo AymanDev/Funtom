@@ -11,7 +11,9 @@ router.post('/', (req, res, next) => {
     password
   });
 
+
   user.save().then((result => {
+    console.log('Registered user: ' + result);
     res.json({
       id: result._id
     });

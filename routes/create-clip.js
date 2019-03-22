@@ -17,6 +17,7 @@ router.post('/', (req, res, next) => {
   });
 
   clip.save().then((result) => {
+    console.log('Creating clip:' + result);
     return res.json({
       id: result._id
     });

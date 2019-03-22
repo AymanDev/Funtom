@@ -12,6 +12,7 @@ router.post('/', (req, res, next) => {
         message: 'User wasn\'t found!'
       });
     }
+    console.log('Logging as user: ' + result);
     if (result.password !== password) {
       return res.json({
         message: 'Wrong password!'
