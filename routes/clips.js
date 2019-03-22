@@ -9,6 +9,7 @@ router.post('/', (req, res, next) => {
   const clips = [];
   let msg = '';
   DBLoader.Clip.find({}, (err, results) => {
+    msg += results + '\n';
     results.forEach(clip => {
       const xx0 = Math.abs(clip.position.x - x);
       const yy0 = Math.abs(clip.position.y - y);
