@@ -6,12 +6,15 @@ const fs = require('fs');
 router.post('/', (req, res, next) => {
   const userId = req.body.userId;
   const soundFile = req.body.soundFile;
-  const position = req.body.position;
+  const x = req.body.x;
+  const y = req.body.y;
 
   const clip = new DBLoader.Clip({
     userId,
     soundFile,
-    position
+    position: {
+      x, y
+    }
   });
 
   clip.save().then((result) => {

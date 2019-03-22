@@ -3,14 +3,15 @@ const router = express.Router();
 const DBLoader = require('../src/DBLoader');
 
 router.post('/', (req, res, next) => {
-  const position = req.body.position;
+  const x = req.body.x;
+  const y = req.body.y;
   const r = 0.0002;
   const clips = [];
 
   DBLoader.Clip.find({}, (err, results) => {
     results.forEach(clip => {
-      const xx0 = Math.abs(clip.position.x - position.x);
-      const yy0 = Math.abs(clip.position.y - position.y);
+      const xx0 = Math.abs(clip.position.x - x);
+      const yy0 = Math.abs(clip.position.y - y);
       if (xx0 <= r && yy0 <= r) {
         clips.push(clip);
       }
@@ -19,6 +20,10 @@ router.post('/', (req, res, next) => {
     return res.json({
       clips
     });
+  });
+
+  return res.json({
+    message: 'Error!'
   });
 });
 
