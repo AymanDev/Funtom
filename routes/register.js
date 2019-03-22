@@ -6,18 +6,31 @@ router.post('/', (req, res, next) => {
   const username = req.body.username;
   const password = req.body.password;
 
-  const user = new DBLoader.User({
-    username,
-    password
-  });
+  DBLoader.User.findOne({username}, (err, result) => {
+    if (err) {
+      return res.json({
+        message: 'Database error!'
+      });
+    }
 
-
-  user.save().then((result => {
-    console.log('Registered user: ' + result);
-    res.json({
-      id: result._id
+    if (result) {
+      return res.json({
+        message: 'Account already exists!'
+      });
+    }
+    const user = new DBLoader.User({
+      username,
+      password
     });
-  }));
+
+
+    user.save().then((result => {
+      console.log('Registered user: ' + result);
+      return res.json({
+        id: result._id
+      });
+    }));
+  });
 });
 
 module.exports = router;
