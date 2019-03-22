@@ -9,10 +9,11 @@ router.post('/', (req, res, next) => {
   const clips = [];
   let msg = '';
   DBLoader.Clip.find({}, (err, results) => {
+    console.log(results);
     msg += results + '\n';
     results.forEach(clip => {
-      const xx0 = Math.abs(clip.position.x - x);
-      const yy0 = Math.abs(clip.position.y - y);
+      const xx0 = Math.abs(clip.x - x);
+      const yy0 = Math.abs(clip.y - y);
       msg += clip + '\n';
       msg += xx0 + '/' + yy0;
       if (xx0 <= r && yy0 <= r) {
@@ -21,13 +22,9 @@ router.post('/', (req, res, next) => {
       }
     });
 
-    // return res.json({
-    //   clips
-    // });
-  });
-
-  return res.json({
-    message: msg
+    return res.json({
+      clips
+    });
   });
 });
 

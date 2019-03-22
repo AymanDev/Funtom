@@ -12,18 +12,17 @@ router.post('/', (req, res, next) => {
   const clip = new DBLoader.Clip({
     userId,
     soundFile,
-    position: {
-      x, y
-    }
+    x,
+    y
   });
 
   clip.save().then((result) => {
     return res.json({
       id: result._id
-    }).catch(() => {
-      return res.json({
-        message: 'Clip saving error!'
-      });
+    });
+  }).catch(() => {
+    return res.json({
+      message: 'Clip saving error!'
     });
   });
 });

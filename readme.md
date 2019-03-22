@@ -17,7 +17,7 @@ Requesting from body:
  - password: String
  
 Respond in body:
- - userId: String
+ - id: String
   
 #
 #### /create-clip/
@@ -26,9 +26,8 @@ Requesting from body:
 
  - userId: String
  - soundFile: String
- - position: Object
-    - x: Number
-    - y: Number
+ - x: Number
+ - y: Number
     
 Respond in body:
  - id: String
@@ -37,9 +36,8 @@ Respond in body:
 #### /clips/
 
 Requesting from body:
- - position:
-    - x: Number
-    - y: Number
+ - x: Number
+ - y: Number
 
 Respond in body:
  - clips: Array<ClipObject>
