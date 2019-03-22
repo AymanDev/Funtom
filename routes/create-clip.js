@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const DBLoader = require('../src/DBLoader');
+const fs = require('fs');
 
 router.post('/', (req, res, next) => {
   const userId = req.body.userId;

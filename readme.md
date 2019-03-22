@@ -32,6 +32,17 @@ Requesting from body:
     
 Respond in body:
  - id: String
- 
+
+#
+#### /clips/
+
+Requesting from body:
+ - position:
+    - x: Number
+    - y: Number
+
+Respond in body:
+ - clips: Array<ClipObject>
+     
 
  

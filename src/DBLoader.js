@@ -10,7 +10,7 @@ function DBLoader() {
 const User = mongoose.model('User', {
   username: String,
   password: String
-});
+}, 'users');
 
 const Clip = mongoose.model('Clip', {
   userId: String,
@@ -19,7 +19,7 @@ const Clip = mongoose.model('Clip', {
     x: Number,
     y: Number
   }
-});
+}, 'clips');
 
 exports.User = User;
 exports.Clip = Clip;

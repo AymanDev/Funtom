@@ -6,6 +6,7 @@ const indexRouter = require('./routes/index');
 const registerRouter = require('./routes/register');
 const loginRouter = require('./routes/login');
 const createClipRouter = require('./routes/create-clip');
+const clipsRouter = require('./routes/clips');
 
 const app = express();
 
@@ -19,5 +20,6 @@ app.use('/', indexRouter);
 app.use('/register', registerRouter);
 app.use('/login', loginRouter);
 app.use('/create-clip', createClipRouter);
+app.use('/clips', clipsRouter);
 
 module.exports = app;
