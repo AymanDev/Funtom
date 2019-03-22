@@ -1,10 +1,21 @@
 const express = require('express');
 const router = express.Router();
+const DBLoader = require('../src/DBLoader');
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
-  res.json({
-    message: 'openshift'
+  const user = new DBLoader.User({
+    username: 'Test',
+    password: 'testpassword'
+  });
+  user.save().then(() => {
+    res.json({
+      message: 'db document saved'
+    });
+  }).catch(() => {
+    res.json({
+      message: 'db document save error'
+    });
   });
 });
 
