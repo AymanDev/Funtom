@@ -16,6 +16,10 @@ router.get('/', function (req, res, next) {
     res.json({
       message: 'db document save error'
     });
+
+    res.json({
+      resultMsg: 'work'
+    });
   });
 });
 
