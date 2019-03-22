@@ -2,10 +2,36 @@
 
 #### /register/
 
-Request from body:
- - username
- - password
+Requesting from body:
+ - username: String
+ - password: String
  
 Respond in body:
- - result
+ - id: String
+
+#
+#### /login/
+
+Requesting from body:
+ - username: String
+ - password: String
+ 
+Respond in body:
+ - userId: String
+  
+#
+#### /create-clip/
+
+Requesting from body:
+
+ - userId: String
+ - soundFile: String
+ - position: Object
+    - x: Number
+    - y: Number
+    
+Respond in body:
+ - id: String
+ 
+
  
