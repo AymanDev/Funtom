@@ -1,5 +1,8 @@
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost:27017/funtom', {useNewUrlParser: true});
+
+function DBLoader() {
+  mongoose.connect('mongodb://localhost:27017/funtom', {useNewUrlParser: true});
+}
 
 const User = mongoose.model('User', {
   username: String,
@@ -7,3 +10,4 @@ const User = mongoose.model('User', {
 });
 
 exports.User = User;
+exports.load = DBLoader;

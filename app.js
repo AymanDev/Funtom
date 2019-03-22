@@ -1,13 +1,13 @@
 const express = require('express');
-const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
-const mongoose = require('mongoose');
+const DBLoader = require('./src/DBLoader');
 const indexRouter = require('./routes/index');
 const soundsRouter = require('./routes/sound');
 
 const app = express();
 
+DBLoader.load();
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({extended: false}));
