@@ -2,8 +2,9 @@ const mongoose = require('mongoose');
 require('dotenv').config();
 
 function DBLoader() {
-  let MONGO_URL = 'mongodb://' + process.env.MONGODB_USER + ':' + process.env.MONGODB_PASSWORD + '@mongodb:27017/funtom';
+  // let MONGO_URL = 'mongodb://' + process.env.MONGODB_USER + ':' + process.env.MONGODB_PASSWORD + '@mongodb:27017/funtom';
   // MONGO_URL = 'mongodb://localhost:27017/funtom';
+  let MONGO_URL = process.env.MONGODB_URI;
   mongoose.connect(MONGO_URL, {useNewUrlParser: true}).catch(() => {
     console.error('Connect error');
   });
