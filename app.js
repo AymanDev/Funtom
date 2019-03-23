@@ -22,6 +22,6 @@ app.use('/register', registerRouter);
 app.use('/login', loginRouter);
 app.use('/create-clip', createClipRouter);
 app.use('/clips', clipsRouter);
-app.use('/clips', clipRouter);
+app.use('/clip', clipRouter);
 
 module.exports = app;
