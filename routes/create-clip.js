@@ -9,15 +9,21 @@ router.post('/', (req, res, next) => {
   const name = req.body.name;
   const x = req.body.x;
   const y = req.body.y;
-
-  const clip = new DBLoader.Clip({
+  const friendUserId = req.body.friendUserId;
+  const clipData = {
     name,
     userId,
     soundFile,
     x,
-    y
-  });
+    y,
+  };
 
+
+  if(friendUserId){
+    clipData.friendUserId = friendUserId;
+  }
+
+  const clip = new DBLoader.Clip(clipData);
   clip.save().then((result) => {
     console.log('Creating clip:' + result);
     return res.json({

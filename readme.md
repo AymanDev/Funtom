@@ -28,6 +28,7 @@ Requesting from body:
  - soundFile: String
  - x: Number
  - y: Number
+ - friendUserId?: String
     
 Respond in body:
  - id: String
@@ -38,6 +39,7 @@ Respond in body:
 Requesting from body:
  - x: Number
  - y: Number
+ - friendUserId?: String
 
 Respond in body:
  - clips: Array<ClipObject>

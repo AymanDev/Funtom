@@ -5,11 +5,16 @@ const DBLoader = require('../src/DBLoader');
 router.post('/', (req, res, next) => {
   const x = req.body.x;
   const y = req.body.y;
+  const friendUserId = req.body.friendUserId;
   const r = 0.0002;
   const clips = [];
+  const filter = {};
 
-  DBLoader.Clip.find({}, (err, results) => {
-    console.log(results);
+  if (friendUserId) {
+    filter.friendUserId = friendUserId;
+  }
+
+  DBLoader.Clip.find(filter, (err, results) => {
     results.forEach(clip => {
       const xx0 = Math.abs(clip.x - x);
       const yy0 = Math.abs(clip.y - y);

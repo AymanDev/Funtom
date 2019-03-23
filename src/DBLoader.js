@@ -20,7 +20,8 @@ const Clip = mongoose.model('Clip', new mongoose.Schema({
   userId: String,
   soundFile: String,
   x: Number,
-  y: Number
+  y: Number,
+  friendUserId: String
 }), 'clips');
 
 exports.User = User;
