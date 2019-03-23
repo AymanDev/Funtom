@@ -18,7 +18,9 @@ router.post('/', (req, res, next) => {
       }
     });
 
-    return res.json(clips);
+    return res.json({
+      clips
+    });
   });
 });
 

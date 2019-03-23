@@ -41,6 +41,15 @@ Requesting from body:
 
 Respond in body:
  - clips: Array<ClipObject>
+ 
+ #
+ #### /clip/
+ 
+Requesting from body:
+  - id: String
+  
+Respond in body:
+  - ClipObject
      
 
  

@@ -16,6 +16,7 @@ const User = mongoose.model('User', new mongoose.Schema({
 }), 'users');
 
 const Clip = mongoose.model('Clip', new mongoose.Schema({
+  name: String,
   userId: String,
   soundFile: String,
   x: Number,
