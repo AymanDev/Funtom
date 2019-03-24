@@ -6,7 +6,7 @@ router.post('/', (req, res, next) => {
   const x = req.body.x;
   const y = req.body.y;
   const friendUserId = req.body.friendUserId;
-  const r = 0.0001;
+  const r = 0.00008;
   const clips = [];
   const filter = {};
 
