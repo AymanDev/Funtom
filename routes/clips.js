@@ -16,9 +16,9 @@ router.post('/', (req, res, next) => {
 
   DBLoader.Clip.find(filter, (err, results) => {
     results.forEach(clip => {
-      const xx0 = Math.abs(clip.x - x);
-      const yy0 = Math.abs(clip.y - y);
-      if (xx0 <= r && yy0 <= r) {
+      const xx0 = Math.pow(clip.x - x, 2);
+      const yy0 = Math.pow(clip.y - y, 2);
+      if (xx0 + yy0 <= r * r) {
         clips.push(clip);
       }
     });
