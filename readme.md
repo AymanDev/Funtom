@@ -3,7 +3,7 @@
 Server side for Android app: https://github.com/alexanderanchishkin/FuntomHere
 Was created for about 4-6 hours.
 
-####POST /register/
+#### POST /register/
 
 Requesting from body:
  - username: String
@@ -13,7 +13,7 @@ Respond in body:
  - id: String
 
 #
-####POST /login/
+#### POST /login/
 
 Requesting from body:
  - username: String
@@ -23,7 +23,7 @@ Respond in body:
  - id: String
   
 #
-####POST /create-clip/
+#### POST /create-clip/
 
 Requesting from body:
 
@@ -37,7 +37,7 @@ Respond in body:
  - id: String
 
 #
-####POST /clips/
+#### POST /clips/
 
 Requesting from body:
  - x: Number
@@ -48,7 +48,7 @@ Respond in body:
  - clips: Array<ClipObject>
  
  #
- ####POST /clip/
+ #### POST /clip/
  
 Requesting from body:
   - id: String
