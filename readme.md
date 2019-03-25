@@ -1,6 +1,9 @@
 ## Routes
 
-#### /register/
+Server side for Android app: https://github.com/alexanderanchishkin/FuntomHere
+Was created for about 4-6 hours.
+
+####POST /register/
 
 Requesting from body:
  - username: String
@@ -10,7 +13,7 @@ Respond in body:
  - id: String
 
 #
-#### /login/
+####POST /login/
 
 Requesting from body:
  - username: String
@@ -20,7 +23,7 @@ Respond in body:
  - id: String
   
 #
-#### /create-clip/
+####POST /create-clip/
 
 Requesting from body:
 
@@ -34,7 +37,7 @@ Respond in body:
  - id: String
 
 #
-#### /clips/
+####POST /clips/
 
 Requesting from body:
  - x: Number
@@ -45,7 +48,7 @@ Respond in body:
  - clips: Array<ClipObject>
  
  #
- #### /clip/
+ ####POST /clip/
  
 Requesting from body:
   - id: String
