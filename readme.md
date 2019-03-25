@@ -1,6 +1,6 @@
 ## Routes
 
-Server side for Android app: https://github.com/alexanderanchishkin/FuntomHere
+Server side for Android app: https://github.com/alexanderanchishkin/FuntomHere  
 Was created for about 4-6 hours.
 
 #### POST /register/
